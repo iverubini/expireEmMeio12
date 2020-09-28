@@ -50,42 +50,27 @@ function setup()
 function draw(){
   noStroke();
   
-  y1= year();
-  m1= month();
-  day1= day();
-  h11= hour();
-  minu1= minute();
-  sec=second();
-
   let r=random(10, 60);
   let voz=micro.getLevel()*800;
-  a=a+0.1; //qto menor, mais espaçada/suave fica a curva
+  a=a+0.31; //qto menor, mais espaçada/suave fica a curva
   x=x+random(0,9); 
   let fala=micro.getLevel()*200;
   
   print(micro.getLevel(0));
-
-  //if (voz>3) {print(fala);}
  
-  fill(random(90, 255)+2*fala, 30+20*fala, random(50,100)+2.5*fala, 100);
+  //fill(random(90, 255)+2*fala, 30+20*fala, random(50,100)+2.5*fala, 100);
+  //fill(fala*10, fala*10, fala*10);
+  fill((10*frameCount) % 360, 100, 100);
   
-  if(mouseIsPressed){ beginShape();
+if(mouseIsPressed){ beginShape();
     vertex (mouseX+fala*8, mouseY+fala*10);
     vertex(mouseX, mouseY);
     vertex (mouseX+100*sin(fala), mouseY + 90*cos(fala));
-    vertex (mouseX+fala*12, mouseY+10*cos(fala));
-    endShape();
-  } 
-
+    vertex (mouseX+fala*12, mouseY+10*sin(fala));
+    endShape(); }
  
-
-  //fill(150, fala*1.2, 150, 120);
-  //ellipse(x, y+r*sin(a), fala*5, fala*5);
-  //fill(voz*100, 120);
-  //ellipse(x, y+r*sin(a), fala*5, fala*5);
-  //fill(255-fala, 200);
-  //ellipse(x, y+r*sin(a), fala*5, fala*5);
-  fill(fala*50, fala*2, fala*60);
+  //fill(255, 105, 192);
+  fill(181, 245, 20);
   ellipse(x, y+r*sin(a), fala*4.2, fala*4.2);
   fill(255, 150);
   ellipse(x+r*cos(a), y+r*sin(a), fala*3, fala*3);
@@ -95,16 +80,8 @@ function draw(){
   if(x > (w - 50)) { x=50; y=y+120;} //cria uma linha
   if(frameCount > random(250,400) ) { frameCount=0; x=x+150; } //espaçador
   if( y > 500) { x=100; y=-1000; frameCount=0;
-  fill(50, 200, 100); rect(0,0, width, height);}
+  fill(255, 166, 158); rect(0,0, width, height);}
   if (y < 0) { x=100; y=y+120;}
   
-  //print(voz);
-  //print ("outro")
-  //print(micro.getLevel(1));
-
-  }
-
-//function touchStarted() {
-//  getAudioContext().resume()
-//}
+}
   
