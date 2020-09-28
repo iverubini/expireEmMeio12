@@ -84,4 +84,3 @@ if(mouseIsPressed){ beginShape();
   if (y < 0) { x=100; y=y+120;}
   
 }
-  
