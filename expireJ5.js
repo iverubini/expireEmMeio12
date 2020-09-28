@@ -40,7 +40,7 @@ function setup()
     });
   
   createCanvas(w=windowWidth, h=windowHeight);
-  background(50, 200, 100);
+  background(255, 166, 158);
   frameRate(100);
   noStroke();  
   micro = new p5.AudioIn();
@@ -49,6 +49,15 @@ function setup()
 
 function draw(){
   noStroke();
+  
+  y1= year();
+  m1= month();
+  day1= day();
+  h11= hour();
+  minu1= minute();
+  sec=second();
+
+    noStroke();
   
   let r=random(10, 60);
   let voz=micro.getLevel()*800;
@@ -82,5 +91,5 @@ if(mouseIsPressed){ beginShape();
   if( y > 500) { x=100; y=-1000; frameCount=0;
   fill(255, 166, 158); rect(0,0, width, height);}
   if (y < 0) { x=100; y=y+120;}
-  
-}
+
+  }
